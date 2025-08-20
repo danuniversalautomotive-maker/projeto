@@ -1,0 +1,17 @@
+{
+  "extends": "../node_modules/@vtex/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["DOM", "DOM.Iterable", "ES2017"],
+    "jsx": "react",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["typings/**/*.d.ts", "**/*.ts", "**/*.tsx"]
+}

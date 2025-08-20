@@ -1,7 +1,4 @@
 {
-  "google-translate": {
-    "component": "GoogleTranslater"
-  },
   "application-table": {
     "component": "ApplicationTable"
   },

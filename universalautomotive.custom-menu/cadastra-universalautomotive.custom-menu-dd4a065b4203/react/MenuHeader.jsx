@@ -12,7 +12,7 @@ const CSS_HANDLES = [
   'container',
   'arrowFirstLevel',
   'textFirstLevel',
-  'iconImage',
+  'iconImage', 
 ]
 
 const Item = ({
@@ -30,6 +30,7 @@ const Item = ({
 
   return (
     <>
+    
       <Link to={href} className={`${handles.level}-link`}>
         {icon && (
           <div className={`${handles.iconImage} ${handles.iconImage}-${level}`}>
@@ -48,16 +49,14 @@ const Item = ({
           )}
         </span>
       </Link>
+
       {hasLevel && menuLevel && menuLevel.length > 0 && (
         <div className={`${handles.level}-container-${level}`}>
           <div className={`${handles.level}-container-${level}--wrapper`}>
             {level !== 0 && (
               <div className={`${handles.level}-top-header`}>
                 <p className={`${handles.level}-top-header-text`}>
-                  <Link
-                    to={href}
-                    className={`${handles.level}-top-header-text-link`}
-                  >
+                  <Link to={href} className={`${handles.level}-top-header-text-link`}>
                     {__editorItemTitle}
                   </Link>
                 </p>
@@ -75,14 +74,6 @@ const Item = ({
                     </li>
                   ))}
                 </ul>
-                {level > 0 && (
-                  <Link
-                    to={href}
-                    className={`${handles.level}-top-header-text-todo`}
-                  >
-                    Ver todos
-                  </Link>
-                )}
               </div>
               {hasLevelBanners && banner && (
                 <Image
@@ -97,18 +88,17 @@ const Item = ({
           </div>
         </div>
       )}
+
     </>
   )
-
 }
 
 const MenuHeader = (props) => {
-  const { menuFirstLevel } = props
-
+  const { menuLevel } = props
   const { handles } = useCssHandles(CSS_HANDLES)
 
-  const items = menuFirstLevel
-    ? menuFirstLevel.filter((el) => el.__editorItemTitle !== '')
+  const items = menuLevel
+    ? menuLevel.filter((el) => el.__editorItemTitle !== '')
     : []
 
   return (
@@ -116,16 +106,16 @@ const MenuHeader = (props) => {
     items.length > 0 && (
       <nav className={handles.newMenuCustom}>
         <div className={handles.container}>
-          {items.map((el, index) => (
-            <div
-              key={index}
-              className={`${handles.level}-index ${
-                el.highlight ? `${handles.level}-highlight` : ''
-              }`}
-            >
-              <Item level={0} {...el} />
-            </div>
-          ))}
+          {/* Botão fixo que renderiza as categorias reais via menuLevel */}
+          <div className={`${handles.level}-index`}>
+            <Item
+              level={0}
+              __editorItemTitle="Departamentos"
+              href="#"
+              hasLevel={true}
+              menuLevel={items}
+            />
+          </div>
         </div>
       </nav>
     )
@@ -135,87 +125,68 @@ const MenuHeader = (props) => {
 MenuHeader.defaultProps = json
 
 MenuHeader.schema = {
-  title: 'Custom Menu Header',
-  description: 'Gerenciador de Menu Header',
+  title: 'Menu Lateral Personalizado',
+  description: 'Categorias dentro do botão fixo "Departamentos"',
   type: 'object',
   properties: {
-    menuFirstLevel: {
-      title: 'Menu primeiro nível',
+    menuLevel: {
+      title: 'Categorias exibidas dentro do botão Departamentos',
       type: 'array',
-      default: MenuHeader.defaultProps.menuFirstLevel,
+      default: MenuHeader.defaultProps.menuLevel,
       items: {
         type: 'object',
         properties: {
           __editorItemTitle: {
-            title: 'Menu item texto',
+            title: 'Nome da categoria',
             type: 'string',
           },
           href: {
-            title: 'Menu item link',
+            title: 'Link da categoria',
             type: 'string',
           },
           icon: {
-            title: 'Menu item icone',
+            title: 'Ícone da categoria',
             type: 'string',
             widget: {
               'ui:widget': 'image-uploader',
             },
           },
           hasLevel: {
-            title: 'Tem Submenu de lista?',
+            title: 'Possui subcategorias?',
             type: 'boolean',
             default: false,
           },
           menuLevel: {
-            title: 'Menu segundo nível',
+            title: 'Subcategorias',
             type: 'array',
             items: {
               type: 'object',
               properties: {
                 __editorItemTitle: {
-                  title: 'Menu item texto',
+                  title: 'Nome da subcategoria',
                   type: 'string',
                 },
                 href: {
-                  title: 'Menu item link',
+                  title: 'Link da subcategoria',
                   type: 'string',
-                },
-                icon: {
-                  title: 'Menu item icone',
-                  type: 'string',
-                  widget: {
-                    'ui:widget': 'image-uploader',
-                  },
-                },
-                hasLevelBanners: {
-                  title: 'Tem banner no subMenu?',
-                  type: 'boolean',
-                  default: false,
-                },
-                banner: {
-                  title: 'SubMenu banner',
-                  type: 'string',
-                  widget: {
-                    'ui:widget': 'image-uploader',
-                  },
                 },
                 hasLevel: {
-                  title: 'Tem Submenu de lista?',
+                  title: 'Possui sub-subcategorias?',
                   type: 'boolean',
                   default: false,
                 },
                 menuLevel: {
-                  title: 'Menu terceiro nível',
+                  title: 'Sub-subcategorias (nível 3)',
                   type: 'array',
                   items: {
                     type: 'object',
                     properties: {
                       __editorItemTitle: {
-                        title: 'Menu item texto',
+                        title: 'Nome da sub-subcategoria',
                         type: 'string',
                       },
                       href: {
-                        title: 'Menu item link',
+                        title: 'Link da sub-subcategoria',
                         type: 'string',
                       },
                     },
@@ -229,5 +200,6 @@ MenuHeader.schema = {
     },
   },
 }
+
 
 export default MenuHeader

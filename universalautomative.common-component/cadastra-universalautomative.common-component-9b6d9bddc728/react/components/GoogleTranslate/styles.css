@@ -3,27 +3,20 @@
 }
 
 .ChooseLanguageWrapper {
-  width: 100%;
-  max-width: 1376px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  padding: 8px 0;
-  gap: 8px;
+      display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: end;
+    width: 1290px;
+    margin-top: 1rem;
 }
 
 .ChooseLanguageWrapper button {
-  width: 43px;
-  height: 32px;
-  background: none;
-  border: none;
-  outline: none;
-  padding: 0;
   transition: box-shadow 0.3s ease;
 }
 
 .ChooseLanguageWrapper button:hover {
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .ChooseLanguageWrapper button {

@@ -5,6 +5,7 @@ import { EnglishFlag } from './Icons/EnglishFlag'
 import { SpanishFlag } from './Icons/SpanishFlag'
 import { PortugueseFlag } from './Icons/PortugueseFlag'
 
+
 declare global {
   interface Window {
     google: any
@@ -79,7 +80,6 @@ export const GoogleTranslate = () => {
         id="google_translate_element"
         className={styles.google_translate_element}
       ></div>
-
       <div className={styles.ChooseLanguageWrapper}>
         <button onClick={translateToPortuguese}>
           <PortugueseFlag />

@@ -1,5 +1,5 @@
 .newMenuCustom .container {
-	max-width: 75rem;
+	max-width: 175rem;
 	margin: auto;
 	padding: 8px 0;
 	display: flex;
@@ -751,6 +751,8 @@
 
 .newMenuCustom .level-index:hover .level-container-0 .level-item-0:hover .level-container-1 .level-item-1:hover .level-container-2 {
 	display: block;
+	padding: 0 1rem !important;
+	line-height: 1rem;
 }
 
 .level-item-1 {
@@ -1232,8 +1234,8 @@
 }
 
 .newMenuCustom .level-container-0 .level-1 {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	display: flex;
+	flex-direction: column;
 	list-style: none;
 	grid-column-gap: 46px;
 	overflow: auto;

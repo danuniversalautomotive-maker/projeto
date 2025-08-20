@@ -9,6 +9,7 @@ const HeaderBackLevel = ({ backFirstLevel, setOpen }) => {
   const { handles } = useCssHandles(CSS_HANDLES)
 
   return (
+    <>
     <div
       className={handles.backButton}
       onClick={() => {
@@ -20,6 +21,7 @@ const HeaderBackLevel = ({ backFirstLevel, setOpen }) => {
       <img className={handles.icon} src={IcoArrowClose} alt="close" />
       Menu Principal
     </div>
+    </>
   )
 }
 
