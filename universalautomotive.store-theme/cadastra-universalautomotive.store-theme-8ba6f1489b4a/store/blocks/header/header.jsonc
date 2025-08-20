@@ -14,10 +14,11 @@
 	"header-layout.desktop": {
 		"title": "Header - Desktop",
 		"children": [
+			"top-bar",
 			"app--client-last-cart",
 			"header-helmet-custom",
 			"flex-layout.row#demo-store-warning",
-			"google-translate",
+			//"google-translate",
 			"flex-layout.row#b2b-user-widget",
 			"sticky-layout#desktop",
 			"experimental__visibility-layout#whatsapp-button"
@@ -265,9 +266,10 @@
 	"header-layout.mobile": {
 		"title": "Header - Mobile",
 		"children": [
+			"top-bar",
 			"app--client-last-cart",
 			"flex-layout.row#demo-store-warning",
-			"google-translate",
+			//"google-translate",
 			"flex-layout.row#b2b-user-widget",
 			"sticky-layout#mobile",
 			"header-helmet-custom",

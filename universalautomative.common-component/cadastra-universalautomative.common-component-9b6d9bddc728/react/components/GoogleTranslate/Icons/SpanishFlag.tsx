@@ -1,10 +1,16 @@
 import React from 'react'
-import FlagEspanhol from './flag-espanhol.png';
+import { useDevice } from 'vtex.device-detector'
 
 export function SpanishFlag() {
+  const { isMobile } = useDevice()
   return (
-    <>  
-      <img src={FlagEspanhol} width={25} height={25} />
+    <>
+      {isMobile ? 
+        <img src='https://universalautomotive.vteximg.com.br/arquivos/es.png' width={30} height={30} />
+      : 
+        <img src='https://universalautomotive.vteximg.com.br/arquivos/es.png' width={25} height={25} />
+      }
+      
     </>
   )
 }

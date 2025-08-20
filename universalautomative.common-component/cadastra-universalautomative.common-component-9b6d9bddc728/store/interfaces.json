@@ -1,4 +1,7 @@
 {
+  "top-bar": {
+    "component": "TopBar"
+  },
   "application-table": {
     "component": "ApplicationTable"
   },

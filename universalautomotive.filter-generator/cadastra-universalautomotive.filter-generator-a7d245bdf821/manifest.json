@@ -20,8 +20,7 @@
     "vtex.catalog-graphql": "1.x",
     "vtex.search-graphql": "0.x",
     "universalautomotive.filter-generator-api-category-tree": "0.x",
-    "vtex.visibility-layout": "0.x",
-    "vtex.device-detector": "0.x"
+    "vtex.visibility-layout": "0.x"
   },
   "registries": [
     "smartcheckout"
