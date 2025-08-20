@@ -86,7 +86,7 @@
 		"children": [
 			"rich-text#specifications",
 			"rich-text#unit-price",
-			"rich-text#inventory",
+			//"rich-text#inventory",
 			"rich-text#qty"
 		]
 	},
@@ -101,7 +101,7 @@
 		"children": [
 			"rich-text#specifications",
 			"rich-text#price-by-quantity",
-			"rich-text#inventory",
+			//"rich-text#inventory",
 			"rich-text#qty-price-by-quantity" /* , "flex-layout.col#spacer-buy-button" */
 		]
 	},
@@ -151,15 +151,15 @@
 			"textPosition": "CENTER"
 		}
 	},
-	"rich-text#inventory": {
+	/*"rich-text#inventory": {
 		"title": "Cabeçalho Estoque",
 		"props": {
-			"text": "**estoque**",
+			"text": "estoque",
 			"blockClass": "skuList",
 			"width": "10%",
 			"textPosition": "CENTER"
 		}
-	},
+	},*/
 	"flex-layout.col#spacer-buy-button": {
 		"props": {
 			"width": "15%"
@@ -202,7 +202,7 @@
 		"children": [
 			"flex-layout.col#sku-highlight-size",
 			"flex-layout.col#sku-price",
-			"flex-layout.col#sku-inventory",
+			//"flex-layout.col#sku-inventory",
 			"flex-layout.col#sku-quantity-selector"
 		]
 	},
@@ -214,7 +214,7 @@
 		"children": [
 			"flex-layout.col#sku-highlight-size",
 			"flex-layout.col#price-by-quantity",
-			"flex-layout.col#sku-inventory",
+			//"flex-layout.col#sku-inventory",
 			"flex-layout.col#sku-quantity-selector-price-by-quantity" /* ,
       "flex-layout.col#sku-buy-button" */
 		]
@@ -357,8 +357,8 @@
 			"sku-has-variation-condition#sku-image",
 			"flex-layout.col#sku-highlight-size-mobile",
 			"benefits-condition#price-by-quantity-with-label",
-			"flex-layout.col#quantity-inventory"
-			// "flex-layout.col#sku-quantity-selector-mobile",
+			//"flex-layout.col#quantity-inventory"
+			 "flex-layout.col#sku-quantity-selector-mobile"
 			// "flex-layout.col#sku-inventory-mobile"
 		]
 	},
@@ -371,7 +371,7 @@
 	"flex-layout.col#price-by-quantity-with-label": {
 		"children": [
 			"rich-text#price-by-quantity",
-			"flex-layout.col#price-by-quantity"
+			"flex-layout.col#price-by-quantity" 
 		]
 	},
 	"flex-layout.col#quantity-inventory": {
@@ -433,7 +433,7 @@
 	},
 	"sku-inventory#mobile": {
 		"props": {
-			"showLabel": true
+			"showLabel": false
 		}
 	},
 	"sku-quantity-selector": {
@@ -455,3 +455,6 @@
 		}
 	}
 }
+
+
+//vai funcionar
