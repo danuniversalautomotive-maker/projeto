@@ -225,6 +225,7 @@ div[class*="vtex-styleguide-9-x-progressHeight w-100 br4 overflow-hidden bg-ligh
 	width: auto;
 	padding-right: 31px;
 	padding-left: 1rem;
+	display: none;
 }
 
 :global(.vtex-flex-layout-0-x-flexRowContent--drawer-menu-account) :global(.vtex-login-2-x-container) :global(.vtex-button)::before {

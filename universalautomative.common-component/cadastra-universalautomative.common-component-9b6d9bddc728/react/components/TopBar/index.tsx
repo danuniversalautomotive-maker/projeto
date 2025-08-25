@@ -85,9 +85,9 @@ function TopBar({ messages = [] }: PropsTopBar) {
               <a href="#">Portal</a>
             </span>
             <span>|</span>
-            <span><a href="#">Cadastre-se</a></span>
+            <span><a href="https://www.universalautomotive.com.br/login?returnUrl=%2F">Cadastre-se</a></span>
             <span>|</span>
-            <span><a href="#">Pedido Rápido</a></span>
+            <span><a href="https://www.universalautomotive.com.br/quickorder">Pedido Rápido</a></span>
           </div>
 
           <div className={styles.slider}>

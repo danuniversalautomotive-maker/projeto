@@ -14,11 +14,11 @@
 	"header-layout.desktop": {
 		"title": "Header - Desktop",
 		"children": [
-			//"top-bar",
+			"top-bar",
 			"app--client-last-cart",
 			"header-helmet-custom",
 			"flex-layout.row#demo-store-warning",
-			"google-translate",
+			//"google-translate",
 			"flex-layout.row#b2b-user-widget",
 			"sticky-layout#desktop",
 			"experimental__visibility-layout#whatsapp-button"
@@ -266,10 +266,10 @@
 	"header-layout.mobile": {
 		"title": "Header - Mobile",
 		"children": [
-			//"top-bar",
+			"top-bar",
 			"app--client-last-cart",
 			"flex-layout.row#demo-store-warning",
-			"google-translate",
+			//"google-translate",
 			"flex-layout.row#b2b-user-widget",
 			"sticky-layout#mobile",
 			"header-helmet-custom",
@@ -505,7 +505,7 @@
 	"flex-layout.row#drawer-portal-client": {
 		"children": [
 			"image#drawer-portal-client",
-			"rich-text#drawer-header-menu"
+			"rich-text#drawer-header-menu"			
 		],
 		"props": {
 			"colSizing": "auto",
@@ -517,13 +517,15 @@
 		"props": {
 			"src": "https://universalautomotive.vtexassets.com/assets/vtex.file-manager-graphql/images/8993a4f6-a911-4c00-a0ce-0324097dbd2a___3e859370cad52188e8f61c96d1f16f2a.svg",
 			"alt": "Portal do Cliente",
-			"maxWidth": "16px"
+			"width": "16px",
+			"height": "20px"
 		}
 	},
 	"rich-text#drawer-header-menu": {
 		"props": {
 			"blockClass": "drawer-menu-header",
-			"text": "Portal do Cliente"
+			//"text": "Portal do Cliente"
+			"text": "Entre ou cadastre-se"
 		}
 	},
 	"link#orderQuote": {

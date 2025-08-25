@@ -90,3 +90,7 @@
         height: 20px;
     }
 }
+
+.items-stretch {
+    align-items: center !important;
+}

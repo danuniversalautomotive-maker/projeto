@@ -360,8 +360,6 @@
 
 .arrowFirstLevel {
 	content: url("assets/icons/arrow-right-black.svg");
-	width: 12px;
-	height: 12px;
 }
 
 .menuCustom .menuFirstLevelListSubmenu .menuFirstLevelListLinkItem .icon,
@@ -938,7 +936,7 @@
 	position: fixed;
 	z-index: 99;
 	right: 0;
-	width: 100%;
+	width: 100% !important;
 }
 
 :global(.vtex-store-drawer-0-x-opened--new-header-mobile):global(.vtex-store-drawer-0-x-closeIconContainer):global(.vtex-store-drawer-0-x-closeIconButton) {
@@ -1041,23 +1039,20 @@
 }
 
 .newMenuCustomMobile .level-container-text-closet .arrowFirstLevel {
-	width: 100%;
 	color: #505050;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
 	content: '';
-	height: auto;
 	display: flex;
 	align-items: center;
 	text-transform: uppercase;
 }
 
 .newMenuCustomMobile .level-container-text-closet .arrowFirstLevel::before {
-	content: url('assets/icons/arrow-left-black.svg');
-	width: 24px;
-	height: 24px;
+	content: url('https://universalautomotive.vteximg.com.br/arquivos/arrow-left-menu-mobile.png?v=2');
+	transform: scale(.6);
 }
 
 .newMenuCustomMobile .level-container-text-closet .level-radio {
@@ -1208,6 +1203,12 @@
 	transition: all 0.2s;
 }
 
+.containerArrowFirstLevel {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
 .level-1--wrapper {
 	display: flex;
 	gap: 2rem;
@@ -1246,6 +1247,14 @@
 	height: auto;
 }
 
+.tituloItemMenu {
+	font-size: 13px;
+	font-weight: 100;
+}
+
+.level-link-0 {
+	text-decoration: none;
+}
 
 @media (min-width: 1440px) and (max-width: 1900px) {
 	.newMenuCustom .level-container-0 .level-1 {
@@ -1293,18 +1302,13 @@
 .labelMenuItem,
 .newMenuCustomMobile .level-index .level-link-0 {
 	display: flex;
-	align-items: center;
-	gap: 20px;
-	background: #d3d3d34d;
-	padding: 0 16px;
 	width: 100%;
-	height: 53px;
 	color: #505050;
 	font-size: 14px;
 	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	text-decoration: none;
+	font-weight: 200;
+	border-bottom: 1px solid #e4e4e4;
+	flex-direction: column;
 }
 
 .newMenuCustomMobile .backText {
@@ -1335,9 +1339,14 @@
 }
 
 .newMenuCustomMobile .iconWrapper {
+	font-size: 13px;
 	display: flex;
-	min-width: 65px;
-	justify-content: center;
+    justify-content: space-between; 
+}
+
+.iconArrow {
+	width: 17px;
+    height: 22px;
 }
 
 .backText .linkMobileWrapper {
@@ -1350,4 +1359,10 @@
 	line-height: normal;
 	gap: 20px;
 	text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .vtex-store-components-3-x-imageElement.vtex-render-runtime-8-x-lazyload.ls-is-cached.lazyloaded {
+    display: none !important;
+  }
 }

@@ -11,6 +11,7 @@ const CSS_HANDLES = [
   'level',
   'newMenuCustomMobile',
   'menuCustomContent',
+  'tituloItemMenu',
   'container',
   'arrowFirstLevel',
   'wrapperTextDirect',
@@ -18,6 +19,8 @@ const CSS_HANDLES = [
   'backText',
   'iconWrapper',
   'linkMobileWrapper',
+  'iconArrow',
+  'containerArrowFirstLevel'
 ]
 
 const Item = ({
@@ -45,13 +48,16 @@ const Item = ({
                     src={icon}
                     loading={level === 0 ? 'eager' : 'lazy'}
                     fetchpriority={level === 0 ? 'high' : 'low'}
-                    maxWidth={64}
+                    maxWidth={125}
                   />
+                  <img src="https://universalautomotive.vteximg.com.br/arquivos/arrow-right-menu-mobile.png?v=1" className={handles.iconArrow} />
                 </div>
               ) : (
                 <></>
               )}
-              {__editorItemTitle}
+              <span className={`${handles.tituloItemMenu}`}>
+                {__editorItemTitle}
+              </span> 
               <input
                 type="radio"
                 name={`${handles['level']}-item-${level}-radio`}
@@ -65,8 +71,17 @@ const Item = ({
                 className={`${handles['level']}-container-text-closet ${handles['level']}-container-text-${level}`}
                 htmlFor={`${handles['level']}-container-text-closet-${level}`}
               >
-                <div className={handles.arrowFirstLevel}>Voltar</div>
-                <div className={handles.backText}>
+                <div className={handles.containerArrowFirstLevel}>
+                  <div className={handles.arrowFirstLevel}> </div>
+                  <span className={`${handles.tituloItemMenuBackLevel}`}> {__editorItemTitle} </span>
+                </div>
+                <input
+                    type="radio"
+                    name={`${handles['level']}-item-${level}-radio`}
+                    id={`${handles['level']}-container-text-closet-${level}`}
+                    className={`${handles['level']}-radio  ${handles['level']}-item-${level}-radio`}
+                  ></input>
+                {/*<div className={handles.backText}>
                   <Link to={href} className={`${handles.linkMobileWrapper}`}>
                     {icon ? (
                       <div className={`${handles.iconWrapper}`}>
@@ -74,21 +89,15 @@ const Item = ({
                           src={icon}
                           loading={level === 0 ? 'eager' : 'lazy'}
                           fetchpriority={level === 0 ? 'high' : 'low'}
-                          maxWidth={64}
+                          maxWidth={160}
                         />
                       </div>
                     ) : (
                       <></>
                     )}
-                    {__editorItemTitle}
                   </Link>
-                  <input
-                    type="radio"
-                    name={`${handles['level']}-item-${level}-radio`}
-                    id={`${handles['level']}-container-text-closet-${level}`}
-                    className={`${handles['level']}-radio  ${handles['level']}-item-${level}-radio`}
-                  ></input>
-                </div>
+                  
+                </div>*/}
               </label>
               {level > 0 ? (
                 <li
@@ -131,7 +140,9 @@ const Item = ({
                 className={`${handles['level']}-radio  ${handles['level']}-item-${level}-radio`}
               ></input>
             </div>
-            {__editorItemTitle}
+            <span className={`${handles.tituloItemMenu}`}>
+                {__editorItemTitle}
+            </span>
           </label>
           {level > 0 ? (
             <li
@@ -139,7 +150,10 @@ const Item = ({
               className={`${handles['level']}-direct ${handles['level']}-item-${level} ${handles['level']}-item`}
             >
               <Link to={href} className={`${handles['level']}-link `}>
-                Ir para {__editorItemTitle}
+                Ir para 
+                <span className={`${handles.tituloItemMenu}`}>
+                  {__editorItemTitle}
+                </span>
               </Link>{' '}
             </li>
           ) : (
@@ -181,13 +195,16 @@ const Item = ({
                   src={icon}
                   loading={level === 0 ? 'eager' : 'lazy'}
                   fetchpriority={level === 0 ? 'high' : 'low'}
-                  maxWidth={64}
+                  maxWidth={160}
                 />
+                <img src="https://universalautomotive.vteximg.com.br/arquivos/arrow-right-menu-mobile.png?v=2" className={handles.iconArrow} />
               </div>
             ) : (
               <></>
             )}
-            {__editorItemTitle}
+            <span className={`${handles.tituloItemMenu}`}>
+                {__editorItemTitle}
+            </span>
           </Link>
         </>
       )}
@@ -241,7 +258,9 @@ const MenuHeaderM = (props) => {
                         : ''
                       }`}
                   >
-                    {__editorItemTitle}
+                    <span className={`${handles.tituloItemMenu}`}>
+                      {__editorItemTitle}
+                    </span>
                   </Link>
                 )
               }

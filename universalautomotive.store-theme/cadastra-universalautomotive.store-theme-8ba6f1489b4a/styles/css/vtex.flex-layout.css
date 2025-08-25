@@ -911,7 +911,7 @@
 }
 
 .flexRow--drawer-menu-mobile-close {
-	background: #000;
+	background: #f4f3f3;
 	padding-left: 25px;
 	padding-right: 10px;
 }
@@ -926,6 +926,7 @@
 
 .flexRow--drawer-menu-footer {
 	background: #000;
+	display: none;
 	position: sticky;
 	bottom: 0;
 	padding: 10px 26px;
